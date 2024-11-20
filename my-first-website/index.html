@@ -1,0 +1,139 @@
+<html>
+	<head>
+		<title>My first website</title>
+		<style>
+		
+			html {
+				background-color: #ba34ca;
+			}
+			
+			body {
+				width: 600px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-top: 100px;
+				font-size: 36px;
+			}
+			
+			h1 {
+				color: red;
+				border: 1px solid red;
+			}
+			
+			#family-header {
+				color: green;
+				border: none;
+			}
+			
+			.gold {
+				color: gold;
+			}
+			
+			.silver {
+				background-color: silver;
+				color: black;
+			}
+			
+			.bronze {
+				background-color: #CE8946;
+				color: white;
+			}
+			
+			img {
+				width: 600px;
+			}
+		
+		
+		</style>
+	</head>
+	<body>
+		<button id="loadImageButton">Click me to have cool things happen!</button>
+
+		<img id='image1' src="https://media.licdn.com/dms/image/v2/C5603AQFwQZWAbRNIlA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1603581250370?e=2147483647&v=beta&t=KvQZIB6Vh-hbJ5aVv9VeQJKxxv68tSG8DzxjFZ0Iaaw" />
+		<h1>Brock Ellis</h1>
+		<h2>Video game enthusiast</h2>
+		
+		<ul>
+			<li class="gold">Halo</li>
+			<li class="silver">Call of Duty</li>
+			<li class="bronze">Dota2</li>
+		</ul>
+
+		<div>
+			<h2>Favorite Movies</h2>
+			<ol>
+				<li class="gold">The Matrix</li>
+				<li class="silver">Lord of the Rings</li>
+				<li class="bronze">The Martian</li>
+			</ol>
+		</div>
+		
+		<h1 id="family-header">My Family</h1>
+		
+		<p id='pets_age'></p>
+		
+		
+		<script>
+		
+			// this will pop open an alert modal
+			//alert("hello world from ZEE CODEZ!");
+			
+			var nickname = 'brockdizzle';
+			var best_friends = ['nick', 'jeremiah', 'ben'];
+			// best_friends[2]
+			
+			var dogs_age = 13;
+			var me = {
+				name: 'brock',
+				nickname: nickname,
+				best_friends: best_friends,
+				age: 36,
+				pets: [
+					{
+						name: 'Moco',
+						type: 'dog',
+						age: 13,
+						sicknesses: ['lupus']
+					},
+					{
+						name: 'Mazda',
+						type: 'dog',
+						age: 14
+					},
+					{
+						name: 'Skippy',
+						type: 'lizard',
+						age: 4
+					}
+				]
+			}
+			
+			var familyHeader = document.getElementById("family-header")
+			familyHeader.innerText = "This thing has been changed!";
+			
+			var emptyParagraphElement = document.getElementById('pets_age');
+			emptyParagraphElement.innerText = me.pets[0].age;
+			emptyParagraphElement.style.color = "red";
+			
+			var loadImageButtonElement = document.getElementById('loadImageButton');
+			loadImageButtonElement.addEventListener('click', loadImage);
+			
+			function loadImage(event) {
+				console.log("got an event");
+				console.log(event);
+			
+				debugger;
+				
+				// emptyParagraphElement.innerText = "LOAD IMAGE WAS CALLED";
+			
+				fetch('https://foodish-api.com/api/').then(result => result.json()).then(data => {
+					console.log(data);
+					var imageOne = document.getElementById('image1');
+					imageOne.src = data.image;
+				})
+			}
+			
+		</script>
+		
+	</body>
+</html>

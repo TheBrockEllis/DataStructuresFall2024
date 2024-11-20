@@ -1,0 +1,69 @@
+<html>
+	<head>
+		<title>Review of HTML, CSS, and JS</title>
+		<style>
+			p {
+				color: red;
+				font-size: 30px;
+			}
+			
+			#kicks {
+				background-color: gold;
+			}
+			
+			.listitem {
+				color: green;
+			}
+		</style>
+	</head>
+	<body id="body">
+		
+		<h1>This is a review</h1>
+		
+		<p>Paragraph</p>
+		
+		<ul>
+			<li class='listitem'>Socks</li>
+			<li id="kicks">Shoes</li>
+			<li class='listitem'>Shirt</li>
+		</ul>
+	
+		<script>
+			var my_name = "Brock";
+			var age = 36;
+			var best_friends = [ "Jeremiah", "Nick", "Chad" ];
+			var best_best_friend = best_friends[2];
+			
+			var fremont = {
+				state: "Nebraska",
+				population: 26000,
+				major_roads: ["Military Ave", "23rd St.", "Bell", "Broad"],
+				stores: [
+					{ name: 'Walmart', established: 1987 }, 
+					{ name: 'Milady Coffeehouse', established: 2015 },
+					{ name: 'Wendys', established: 1974 }
+				]
+			}
+		
+			// 1. Loops
+			best_friends.forEach( friend_name => sayHelloToFriend(friend_name) )
+			function sayHelloToFriend(friend_name) {
+				alert(friend_name);
+				console.log(friend_name);
+			}
+			
+			// 2. Dynamic Strings
+			var my_string = "world";
+			var new_string = "hello " + my_string + " dolly";
+			// hello world dolly
+			
+			// 3. Creating Elements 
+			var new_paragraph = document.createElement("p");
+			new_paragraph.innerText = "This is a brand new element";
+			document.getElementById('body').appendChild(new_paragraph);
+		</script>
+	</body>
+</html>
+
+
+https://github.com/users/TheBrockEllis/projects/2

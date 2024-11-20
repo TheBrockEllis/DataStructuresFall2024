@@ -1,0 +1,26 @@
+<html>
+        <head>
+                <title>Examples of Console Logs</title>
+        </head>
+        <body>
+                <h1>Open the Console to view types of logs</h1>
+                <script>
+                        var me = { name: 'brock', age: 34, good_at_video_games: false };
+                        console.table(me);
+
+                        console.warn('Oh noooo, a warning!');
+
+                        console.time('Console Group Timer');
+
+                        console.group("Awesome Sauce Group");
+                        console.log('This is the first awesome log');
+                        console.log('This is the second awesome log');
+                        console.log('This is the third awesome log');
+                        console.groupEnd();
+
+                        console.timeEnd('Console Group Timer');
+
+                        console.trace();
+                </script>
+        </body>
+</html>

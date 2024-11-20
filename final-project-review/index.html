@@ -1,0 +1,66 @@
+<html>
+
+	<head>
+		<title>Final project review</title>
+		<style>
+			body { 
+				background-color: #cb4a31;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBn1ZNUs4m9sZjXG4yj3klc76i5bUlsZLdCw&s">
+	
+		<a href="detail.html">Click here to go to detail page</a>
+	
+		<button id="add-heading">Click me to add a heading</button>
+	
+		<div id="container">
+		</div>
+	
+		<script>
+			var my_name = "brock402!";
+			var my_age = 36;
+			var is_full = false;
+			var movies = ["Batman Begins", "The Batman", "The Pengiun"];
+			console.log(movies[2]);
+			var the_batman = {
+				producer: "Warner Bros",
+				director: "Somebody",
+				actors: [
+					{ 
+						name: "Robert",
+						film_credits: 10,
+						is_hirable: true
+					}, "Zoe Kravitz"
+				] 
+			};
+			
+			console.log(the_batman.director);
+			
+			function light_bat_signal(lit) {
+				console.log("Bat signal is now...");
+				console.log(lit);
+			}
+			
+			var btn = document.getElementById("add-heading");
+			btn.addEventListener('click', createHeading);
+		
+			function createHeading() {
+				console.log('Getting here!');
+				
+				var new_heading = document.createElement("h1");
+				// ^ <h1></h1>
+				
+				new_heading.innerText = "This is a new heading";
+				// ^ <h1>This is a new heading</h1>
+				
+				var container = document.getElementById("container");
+				container.appendChild(new_heading);
+			}
+		
+		</script>
+	
+	</body>
+
+</html>
